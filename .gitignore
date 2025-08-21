@@ -1,0 +1,69 @@
+# ---- Rails / Ruby ----
+*.rbc
+capybara-*.html
+.rspec_status
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Active Storage (keep placeholder)
+/storage/*
+!/storage/.keep
+
+# Bundler
+/.bundle
+/vendor/bundle
+
+# Byebug / history
+.byebug_history
+
+# SQLite (in case someone switches adapters locally)
+db/*.sqlite3
+db/*.sqlite3-journal
+db/*.sqlite3-*
+db/*.sqlite3-shm
+db/*.sqlite3-wal
+
+# ---- Node / JS (optional) ----
+/node_modules
+/yarn-error.log
+npm-debug.log*
+
+# ---- Assets generated ----
+/public/assets
+/public/packs
+/public/packs-test
+/public/uploads
+
+# ---- Coverage / docs ----
+/coverage
+/.yardoc
+/doc/
+
+# ---- dotenv / env files ----
+.env
+.env.*
+!.env.example
+
+# ---- Rails credentials keys (DO NOT COMMIT) ----
+/config/master.key
+/config/credentials/*.key
+
+# Rails encrypted credentials files (.yml.enc) ARE committed
+
+# ---- Editors / OS ----
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml
+
+# ---- PostgreSQL dumps ----
+*.sql
+*.psql
+
+# ---- Docker (locals/overrides) ----
+docker-compose.override.yml
+docker/*.local.*
