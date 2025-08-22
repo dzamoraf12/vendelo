@@ -51,4 +51,12 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Create New Product"
     assert_select "form"
   end
+
+  test "should get edit product form" do
+    product = products(:ps4)
+    get edit_product_path(product)
+    assert_response :success
+    assert_select "h2", "Edit Product"
+    assert_select "form"
+  end
 end
