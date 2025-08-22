@@ -5,9 +5,5 @@
       <h2><%= product.title %></h2>
       <span>Price: <%= number_to_currency(product.price) %></span>
     <% end %>
-    <div>
-      <%= link_to "Edit", edit_product_path(product) %> |
-      <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
   </div>
 <% end %>
