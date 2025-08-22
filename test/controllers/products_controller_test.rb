@@ -51,4 +51,48 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Create New Product"
     assert_select "form"
   end
+
+  test "should get edit product form" do
+    product = products(:ps4)
+    get edit_product_path(product)
+    assert_response :success
+    assert_select "h2", "Edit Product"
+    assert_select "form"
+  end
+
+  test "should update product" do
+    product = products(:ps4)
+    patch product_path(product), params: {
+      product: {
+        title: "Updated PS4",
+        description: "Updated description",
+        price: 9.99
+      }
+    }
+    assert_redirected_to product_path(product)
+    assert_equal "Product updated successfully.", flash[:notice]
+  end
+
+  test "should not update product with invalid data" do
+    product = products(:ps4)
+    patch product_path(product), params: {
+      product: {
+        title: "",
+        description: "Updated description",
+        price: -9.99
+      }
+    }
+    assert_response :unprocessable_entity
+    assert_select "h2", "Edit Product"
+    assert_select "form"
+  end
+
+  test "should destroy product" do
+    product = products(:ps4)
+    assert_difference("Product.count", -1) do
+      delete product_path(product)
+    end
+    assert_redirected_to products_path
+    assert_equal "Product deleted successfully.", flash[:notice]
+  end
 end
