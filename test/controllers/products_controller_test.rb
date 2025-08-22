@@ -34,6 +34,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       }
     end
     assert_redirected_to product_path(Product.last)
+    assert_equal "Product created successfully.", flash[:notice]
   end
 
   test "should not create product with invalid data" do
