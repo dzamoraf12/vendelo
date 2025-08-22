@@ -35,4 +35,19 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to product_path(Product.last)
   end
+
+  test "should not create product with invalid data" do
+    assert_no_difference("Product.count") do
+      post products_path, params: {
+        product: {
+          title: "",
+          description: "Product description",
+          price: -9.99
+        }
+      }
+    end
+    assert_response :unprocessable_entity
+    assert_select "h2", "Create New Product"
+    assert_select "form"
+  end
 end
