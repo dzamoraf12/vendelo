@@ -86,4 +86,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Edit Product"
     assert_select "form"
   end
+
+  test "should destroy product" do
+    product = products(:ps4)
+    assert_difference("Product.count", -1) do
+      delete product_path(product)
+    end
+    assert_redirected_to products_path
+    assert_equal "Product deleted successfully.", flash[:notice]
+  end
 end
