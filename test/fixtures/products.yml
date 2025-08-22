@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  price: 1
+ps4:
+  title: PS4 Fat
+  description: En muy buen estado
+  price: 8000
 
-two:
-  title: MyString
-  description: MyText
-  price: 1
+xbox:
+  title: Xbox One
+  description: En buen estado
+  price: 12000
