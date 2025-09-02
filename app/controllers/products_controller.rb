@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
+  before_action :find_product, only: %i[show edit update destroy]
+
   def index
-    @products = Product.all
+    @products = Product.all.with_attached_photo
   end
 
   def show
-    @product = Product.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to products_path, alert: "Product not found"
   end
@@ -23,11 +24,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to @product, notice: "Product updated successfully."
     else
@@ -36,7 +35,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path, notice: "Product deleted successfully."
   end
@@ -45,5 +43,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:title, :description, :price, :photo)
+  end
+
+  def find_product
+    @product = Product.find(params[:id])
   end
 end
