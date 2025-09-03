@@ -1,12 +1,3 @@
-<h1>Products:</h1>
-<% @products.each do |product| %>
-  <div>
-    <%= link_to product_path(product), class: "product" do %>
-      <div style="margin-top: 10px;">
-        <%= image_tag product.photo, width: 300 if product.photo.attached? %>
-      </div>
-      <h2><%= product.title %></h2>
-      <span>Price: <%= number_to_currency(product.price) %></span>
-    <% end %>
-  </div>
-<% end %>
+<h1><%= t(".title") %></h1>
+
+<%= render partial: "product", collection: @products %>
