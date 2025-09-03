@@ -81,6 +81,7 @@ en:
   common:
     confirm: "Are you sure?"
     not_found: "Record not found"
+    back: "Back"
   products:
     index:
       title: "Products"
@@ -88,9 +89,30 @@ en:
       title: "Edit Product"
     new:
       title: "Create New Product"
+    show:
+      edit: "Edit"
+      delete: "Delete"
     create:
       created: "Product created successfully."
     update:
       updated: "Product updated successfully."
     destroy:
       destroyed: "Product deleted successfully."
+  categories:
+    category:
+      edit: "Edit"
+      delete: "Delete"
+      name: "Name"
+    index:
+      title: "Categories"
+      new: "New Category"
+    new:
+      title: "New Category"
+    edit:
+      title: "Edit Category"
+    create:
+      created: "Category created successfully."
+    update:
+      updated: "Category updated successfully."
+    destroy:
+      destroyed: "Category deleted successfully."

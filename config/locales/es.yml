@@ -64,3 +64,21 @@ es:
       updated: "Producto actualizado exitosamente."
     destroy:
       destroyed: "Producto eliminado exitosamente."
+  categories:
+    category:
+      edit: "Editar"
+      delete: "Eliminar"
+      name: "Nombre"
+    index:
+      title: "Categorías"
+      new: "Nueva categoría"
+    new:
+      title: "Nueva categoría"
+    edit:
+      title: "Editando categoría"
+    create:
+      created: "Categoría creada exitosamente."
+    update:
+      updated: "Categoría actualizada exitosamente."
+    destroy:
+      destroyed: "Categoría eliminada exitosamente."
