@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
   rescue ActiveRecord::RecordNotFound
-    redirect_to products_path, alert: "Product not found"
+    redirect_to products_path, alert: t("common.not_found")
   end
 
   def new
@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to @product, notice: "Product created successfully."
+      redirect_to @product, notice: t(".created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: "Product updated successfully."
+      redirect_to @product, notice: t(".updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_path, notice: "Product deleted successfully."
+    redirect_to products_path, notice: t(".destroyed")
   end
 
   private
